@@ -17,5 +17,6 @@ namespace Miniwd.Models
         public int Standard { get; set; } //Standard mieszkania
         public int Floor { get; set; } //Piętro
 
+
     }
 }
