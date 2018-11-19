@@ -9,9 +9,9 @@ namespace Miniwd.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public string Index()
+        public ViewResult Index()
         {
-            return "Aplikacja wykorzysująca Sztuczną inteligęcję aby rekomendować mieszkania :D";
+            return View();
         }
     }
 }

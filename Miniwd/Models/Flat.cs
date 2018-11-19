@@ -11,7 +11,10 @@ namespace Miniwd.Models
         public string KindOfSpace { get; set; } //Czy pokój czy mieszkanie
         public int RoomsAmount { get; set; } //Liczba pokoi
         public int BathroomsAmount { get; set; } //Liczba łazienek
-
-
+        public string IsGoodLocation { get; set; } //Dobra lokalizacja
+        public double Size { get; set; } //Metraż
+        public decimal Price { get; set; } //Cena
+        public int Standard { get; set; } //Standard mieszkania
+        public int Floor { get; set; } //Piętro
     }
 }
