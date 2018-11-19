@@ -16,7 +16,5 @@ namespace Miniwd.Models
         public decimal Price { get; set; } //Cena
         public int Standard { get; set; } //Standard mieszkania
         public int Floor { get; set; } //Piętro
-
-
     }
 }
