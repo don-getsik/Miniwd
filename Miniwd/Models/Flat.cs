@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Miniwd.Models
 {
+    //Model formatki
     public class Flat
     {
         public string KindOfOperation { get; set; } //Czy kupno czy wynajem
