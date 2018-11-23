@@ -35,12 +35,12 @@ namespace Miniwd.Models
 
         [Required(ErrorMessage ="Proszę podać metraż")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać metraż większy niż 1")]
-        [RegularExpression("^[0-9]*,?[0-9]*$", ErrorMessage = "Nieprawidłowy metraż z oferty")]
+        [RegularExpression("(^[0-9]*$)|(^[0-9]*,[0-9]{1,2}$)", ErrorMessage = "Nieprawidłowy metraż z oferty")]
         public double Size { get; set; } //Metraż
 
         [Required(ErrorMessage = "Prosze podać cenę z oferty")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podac preferowaną cenę większą niż 1zł")]
-        [RegularExpression("^[0-9]*,?[0-9]*$", ErrorMessage = "Nieprawidłowa cena z oferty")]
+        [RegularExpression("(^[0-9]*$)|(^[0-9]*,[0-9]{1,2}$)", ErrorMessage = "Nieprawidłowa cena z oferty")]
         [DataType(DataType.Currency)]
         public decimal Price { get; set; } //Cena
 
@@ -64,7 +64,7 @@ namespace Miniwd.Models
 
         [Required(ErrorMessage = "Prosze podać preferowaną cenę")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podac preferowaną cenę większą niż 1zł")]
-        [RegularExpression("^[0-9]*,?[0-9]*$", ErrorMessage = "Nieprawidłowa preferowana cena")]
+        [RegularExpression("(^[0-9]*$)|(^[0-9]*,[0-9]{1,2}$)", ErrorMessage = "Nieprawidłowa preferowana cena")]
         [DataType(DataType.Currency)]
         public decimal UserPrice { get; set; } //Cena która interesuje użytkownika
 
