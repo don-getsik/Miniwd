@@ -13,7 +13,14 @@ namespace Miniwd.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            return View();
+            return View("Index");
+        }
+
+        [HttpPost]
+        public ViewResult Index (Flat flat)
+        {
+            // TODO: Dodanie obsługi zgłoszenia
+            return View ("Result", flat);
         }
 
         [HttpPost]

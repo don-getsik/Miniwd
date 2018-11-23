@@ -11,7 +11,9 @@ namespace Miniwd.Models
         [Required(ErrorMessage = "Prosze podać typ oferty")]
         public string KindOfOperation { get; set; } //Czy kupno czy wynajem
         [Required(ErrorMessage = "Proszę podać typ nieruchomości")]
+        //public string UserKindOfOperation { get; set; } //Czy kupno czy wynajem - decyzja użytkownika
         public string KindOfSpace { get; set; } //Czy pokój czy mieszkanie
+        //public string UserKindOfSpace { get; set; } //Czy pokój czy mieszkanie - decyzja użytkownika
         [Required(ErrorMessage = "Proszę podac liczbę pokoi")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podac liczbe pokoi większą niż 1")]
         public int RoomsAmount { get; set; } //Liczba pokoi
@@ -21,6 +23,7 @@ namespace Miniwd.Models
         //public string IsGoodLocation { get; set; } //Dobra lokalizacja
         [Required(ErrorMessage ="Prosze podać ocenę lokalizacji")]
         public int LocationRating { get; set; } // Ocena lokalizacji
+        //public double RoomSize { get; set; } // Metraż pokoju
         [Required(ErrorMessage ="Proszę podać metraż")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać metraż większy niż 1")]
         public double Size { get; set; } //Metraż
@@ -33,7 +36,11 @@ namespace Miniwd.Models
         [Required(ErrorMessage = "Prosze podać piętro")]
         [Range(0, int.MaxValue, ErrorMessage = "Proszę podać piętro większe niż 0")]
         public int Floor { get; set; } //Piętro
+        public string City { get; set; } // Miejscowość
+        public int UserRoomsAmount { get; set; } //Liczba pokoi które chce użytkownika
+        public decimal UserPrice { get; set; } //Cena która interesuje użytkownika
+        public int UserStandard { get; set; } //Standard mieszkania który chce użytkownik
+        public int UserLocationRating { get; set; } // Ocena lokalizacji, którą chce użytkownik
         public bool IsGoodOfert { get; set; } //Czy oferta jest dobra (by Python)
-
     }
 }

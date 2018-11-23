@@ -1,11 +1,33 @@
 ﻿body {
-    background-color: #F1F1F1;
+    background-color: #f7f7f9;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: unset;
+    background-color: #EBEBEB;
 }
 
 div.form-row {
     padding-left:15px;
+    padding:5px 0px 5px 0px;
 }
 
 .panel.panel-heading {
     padding: 10px 0px 10px 0px;
+}
+
+.form-div {
+    //margin-left:20px;
+    position: relative;
+    //padding: 1rem;
+    border: solid #9E9E9E;
+    border-width: 0.1rem;
+}
+
+form.form-style {
+    //background-color: #EBEBEB;
 }
