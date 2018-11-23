@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Miniwd.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,17 @@ namespace Miniwd.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public string Index()
+        [HttpGet]
+        public ViewResult Index()
         {
-            return "Aplikacja wykorzysująca Sztuczną inteligęcję aby rekomendować mieszkania :D";
+            return View("Index");
+        }
+
+        [HttpPost]
+        public ViewResult Index (Flat flat)
+        {
+            // TODO: Dodanie obsługi zgłoszenia
+            return View ("Result", flat);
         }
     }
 }

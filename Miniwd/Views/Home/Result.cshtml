@@ -1,0 +1,101 @@
+﻿@model Miniwd.Models.Flat
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/form-styles.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <div class="panel panel-success">
+        <div class="panel panel-heading text-center">
+            <h4>Wyniki działania</h4>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div>
+                    Rodzaj oferty: 
+                        @if (Model.KindOfOperation.Equals("K"))
+                        {<label> Kupno</label>}
+                        else
+                        {<label> Wynajem</label>}
+                </div>
+                <div>
+                    Rodzaj mieszkania: 
+                        @if (Model.KindOfSpace.Equals("M"))
+                        {<label>Mieszkanie</label>}
+                        else
+                        { <label>Pokój</label>}
+                </div>
+                <div>
+                    Liczba pokoi: @Model.RoomsAmount
+                </div>
+                <div>
+                    Liczba łazienek: @Model.BathroomsAmount
+                </div>
+                <div>
+                    Ocena lokalizacji:
+                    @switch (Model.LocationRating)
+                    {
+                        case 5:
+                            <p>Bardzo ważna (5)</p>
+                            break;
+
+                        case 4:
+                            <p>Ważna (4)</p>
+                            break;
+
+                        case 3:
+                            <p>Obojętna (3)</p>
+                            break;
+
+                        case 2:
+                            <p>Mało ważna (2)</p>
+                            break;
+
+                        case 1:
+                            <p>Nieistotna (1)</p>
+                            break;
+
+                        default:
+                            <label>Obojętna (3)</label>
+                            break;
+
+                    }
+                </div>
+            </form>
+        </div>
+
+        <div>
+            Metraż: @Model.Size
+        </div>
+
+        <div>
+            Cena: @Model.Price
+        </div>
+
+        <div>
+            Jakość mieszkania: @Model.Standard
+        </div>
+
+        <div>
+            Piętro: @Model.Floor
+        </div>
+        <div class="text-center">
+            @if (Model.IsGoodOfert.Equals(true)) { <label> To mieszkanie jest dobre :)</label> }
+            else {  <label>To nie jest dobra oferta :(</label>}
+        </div>
+    </div>
+    }
+</body>
+</html>
