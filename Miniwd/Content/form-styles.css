@@ -1,0 +1,11 @@
+﻿body {
+    background-color: #F1F1F1;
+}
+
+div.form-row {
+    padding-left:15px;
+}
+
+.panel.panel-heading {
+    padding: 10px 0px 10px 0px;
+}
