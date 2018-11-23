@@ -31,7 +31,6 @@
                     <div class="panel panel-info">
                         <div class="panel panel-heading text-center">Wprowadź dane oferty, którą otrzymałeś</div>
                     </div>
-                    <form class="form-style">
                         <div class="form-row">
                             <legend class="col-form-label col-6 pt-0">Rodzaj oferty</legend>
                             <div class="col-6">
@@ -98,13 +97,11 @@
                             <label>Miejscowość</label>
                             @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
                         </div>
-                    </form>
                 </div>
                 <div class="col-6 form-div">
                     <div class="panel panel-warning">
                         <div class="panel panel-heading text-center">Wprowadź swoje preferencje</div>
                     </div>
-                    <form class="form-style">
                         <div class="form-group col-12">
                             <label>Liczba pokoi</label>
                             @Html.TextBoxFor(x => x.UserRoomsAmount, new { @class = "form-control" })
@@ -133,7 +130,6 @@
                             new SelectListItem() {Text = "Bardzo niski (1)", Value = "1"}
                            }, "Wybierz ocenę standardu", new { @class = "form-control" })
                         </div>
-                    </form>
                 </div>
             </div>
             
