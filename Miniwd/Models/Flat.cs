@@ -20,7 +20,7 @@ namespace Miniwd.Models
 
         [Required(ErrorMessage = "Proszę podać liczbę pokoi z oferty")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać liczbę pokoi z oferty większą niż 1")]
-        [RegularExpression("^[0-9]*?",ErrorMessage ="Nieprawidłowa liczba pokoi z oferty")]
+        [RegularExpression("^[0-9]*$",ErrorMessage ="Nieprawidłowa liczba pokoi z oferty")]
         public int RoomsAmount { get; set; } //Liczba pokoi
 
         [Required(ErrorMessage = "Prosze podać liczbę łazienek")]
@@ -59,7 +59,7 @@ namespace Miniwd.Models
 
         [Required(ErrorMessage = "Proszę podać preferowaną liczbę pokoi")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać preferowaną liczbę pokoi większą niż 1")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Nieprawidłowa liczba łazienek")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Nieprawidłowa preferowana liczba pokoi")]
         public int UserRoomsAmount { get; set; } //Liczba pokoi które chce użytkownika
 
         [Required(ErrorMessage = "Prosze podać preferowaną cenę")]
