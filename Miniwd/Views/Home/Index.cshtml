@@ -15,6 +15,8 @@
     <title>Wypełnianie formatki</title>
 </head>
 <body>
+  @using (Html.BeginForm())
+  {
     <div class="panel panel-success">
         <div class="panel panel-heading text-center"><h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4></div>
         <div class="panel-body">
@@ -102,8 +104,11 @@
             </div>
             
             
-            
+            <div class="text-center">
+                <input type="submit" class="btn btn-success" value="Wyślij formularz" />
+            </div>
         </div>
     </div>
+    }
 </body>
 </html>

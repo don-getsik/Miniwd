@@ -5,7 +5,6 @@ using System.Web;
 
 namespace Miniwd.Models
 {
-    //Model formatki
     public class Flat
     {
         public string KindOfOperation { get; set; } //Czy kupno czy wynajem
@@ -24,5 +23,6 @@ namespace Miniwd.Models
         public decimal UserPrice { get; set; } //Cena która interesuje użytkownika
         public int UserStandard { get; set; } //Standard mieszkania który chce użytkownik
         public int UserLocationRating { get; set; } // Ocena lokalizacji, którą chce użytkownik
+        public bool IsGoodOfert { get; set; } //Czy oferta jest dobra (by Python)
     }
 }
