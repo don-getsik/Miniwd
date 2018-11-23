@@ -10,13 +10,10 @@
     margin: unset;
     background-color: #EBEBEB;
 }
-div .form-row {
-    padding-left: 15px;
-    background-color: #F1F1F1;
-}
 
 div.form-row {
     padding-left:15px;
+    padding:5px 0px 5px 0px;
 }
 
 .panel.panel-heading {
@@ -28,9 +25,9 @@ div.form-row {
     position: relative;
     //padding: 1rem;
     border: solid #9E9E9E;
-    border-width: 0.2rem;
+    border-width: 0.1rem;
 }
 
 form.form-style {
-    background-color: #EBEBEB;
+    //background-color: #EBEBEB;
 }

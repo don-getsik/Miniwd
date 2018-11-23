@@ -18,12 +18,12 @@
   @using (Html.BeginForm())
   {
     <div class="panel panel-success">
-        <div class="panel panel-heading text-center"><h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4></div>
+        <div class="panel panel-heading text-center"><h4>Sprawdź czy oferta mieszkania/pokoju się opłaca wypełniając poniższe pola formularza</h4></div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-6 form-div">
                     <div class="panel panel-info">
-                        <div class="panel panel-heading text-center">Wprowadź dane oferty mieszkania lub pokoju</div>
+                        <div class="panel panel-heading text-center">Wprowadź dane oferty, którą otrzymałeś</div>
                     </div>
                     <form class="form-style">
                         <div class="form-row">
@@ -67,12 +67,8 @@
                            }, "Wybierz ocenę lokalizacji", new { @class = "form-control" })
                         </div>
                         <div class="form-group col-12">
-                            <label>Metraż mieszkania</label>
-                            @Html.TextBoxFor(x => x.FlatSize, new { @class = "form-control" })
-                        </div>
-                        <div class="form-group col-12">
-                            <label>Metraż pokoju</label>
-                            @Html.TextBoxFor(x => x.RoomSize, new { @class = "form-control" })
+                            <label>Metraż mieszkania/pokoju</label>
+                            @Html.TextBoxFor(x => x.Size, new { @class = "form-control" })
                         </div>
                         <div class="form-group col-12">
                             <label>Cena</label>
@@ -99,7 +95,39 @@
                     </form>
                 </div>
                 <div class="col-6 form-div">
-                    teest
+                    <div class="panel panel-warning">
+                        <div class="panel panel-heading text-center">Wprowadź swoje preferencje</div>
+                    </div>
+                    <form class="form-style">
+                        <div class="form-group col-12">
+                            <label>Liczba pokoi</label>
+                            @Html.TextBoxFor(x => x.UserRoomsAmount, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Ocena lokalizacji</label>
+                            @Html.DropDownListFor(x => x.UserLocationRating, new[] {
+                            new SelectListItem() {Text = "Bardzo ważna (5)", Value = "5"},
+                            new SelectListItem() {Text = "Ważna (4)", Value = "4"},
+                            new SelectListItem() {Text = "Obojętna (3)", Value = "3"},
+                            new SelectListItem() {Text = "Mało ważna (2)", Value = "2"},
+                            new SelectListItem() {Text = "Nieistotna (1)", Value = "1"}
+                           }, "Wybierz ocenę lokalizacji", new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Cena</label>
+                            @Html.TextBoxFor(x => x.UserPrice, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-12">
+                            <label>Ocena standardu</label>
+                            @Html.DropDownListFor(x => x.UserStandard, new[] {
+                            new SelectListItem() {Text = "Bardzo wysoki (5)", Value = "5"},
+                            new SelectListItem() {Text = "Wysoki (4)", Value = "4"},
+                            new SelectListItem() {Text = "Średni (3)", Value = "3"},
+                            new SelectListItem() {Text = "Niski (2)", Value = "2"},
+                            new SelectListItem() {Text = "Bardzo niski (1)", Value = "1"}
+                           }, "Wybierz ocenę standardu", new { @class = "form-control" })
+                        </div>
+                    </form>
                 </div>
             </div>
             
