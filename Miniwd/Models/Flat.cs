@@ -17,8 +17,7 @@ namespace Miniwd.Models
         public decimal Price { get; set; } //Cena
         public int Standard { get; set; } //Standard mieszkania
         public int Floor { get; set; } //Piętro
->>>>>>>>> Temporary merge branch 2
-
+        public bool IsGoodOfert { get; set; } //Czy oferta jest dobra (by Python)
 
     }
 }

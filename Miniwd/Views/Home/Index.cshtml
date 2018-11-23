@@ -15,18 +15,22 @@
     <title>Index</title>
 </head>
 <body>
+    @using (Html.BeginForm())
+    {
     <div class="panel panel-success">
-        <div class="panel panel-heading text-center"><h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4></div>
+        <div class="panel panel-heading text-center">
+            <h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4>
+        </div>
         <div class="panel-body">
             <form>
                 <div class="form-row">
                     <legend class="col-form-label col-3 pt-0">Rodzaj oferty</legend>
                     <div class="col-9">
                         <div class="form-check">
-                            @Html.RadioButtonFor(x => x.KindOfOperation, new { @class = "form-control" }) Kupno
+                            @Html.RadioButtonFor(x => x.KindOfOperation, "K") Kupno
                         </div>
                         <div class="form-check">
-                            @Html.RadioButtonFor(x => x.KindOfOperation, new { @class = "form-control" }) Wynajem
+                            @Html.RadioButtonFor(x => x.KindOfOperation, "W") Wynajem
                         </div>
                     </div>
                 </div>
@@ -34,10 +38,10 @@
                     <legend class="col-form-label col-3">Rodzaj mieszkania</legend>
                     <div class="col-9">
                         <div class="form-check" placeholder="test">
-                            @Html.RadioButtonFor(x => x.KindOfSpace, new { @class = "form-control" }) Mieszkanie
+                            @Html.RadioButtonFor(x => x.KindOfSpace, "M") Mieszkanie
                         </div>
                         <div class="form-check">
-                            @Html.RadioButtonFor(x => x.KindOfSpace, new { @class = "form-control" }) Pokój
+                            @Html.RadioButtonFor(x => x.KindOfSpace, "P") Pokój
                         </div>
                     </div>
                 </div>
@@ -92,6 +96,10 @@
             Piętro:
             @Html.TextBoxFor(x => x.Floor)
         </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Wyślij formularz" />
+        </div>
     </div>
+    }
 </body>
 </html>
