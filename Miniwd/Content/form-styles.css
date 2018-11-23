@@ -1,8 +1,16 @@
-﻿h4 {
-    color: red !important;
+﻿body {
+    background-color: #f7f7f9;
 }
 
-div.form-row {
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: unset;
+    background-color: #EBEBEB;
+}
+div .form-row {
     padding-left: 15px;
 }
 
@@ -10,9 +18,14 @@ div.form-row {
     padding: 10px 0px 10px 0px;
 }
 
-body > .form-div {
+.form-div {
+    //margin-left:20px;
     position: relative;
-    padding: 23rem;
-    border: 10px solid #b6ff00;
-    background-color: red !important;
+    //padding: 1rem;
+    border: solid #9E9E9E;
+    border-width: 0.2rem;
+}
+
+form.form-style {
+    background-color: #EBEBEB;
 }
