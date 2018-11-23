@@ -13,11 +13,16 @@ namespace Miniwd.Models
         public int BathroomsAmount { get; set; } //Liczba łazienek
         //public string IsGoodLocation { get; set; } //Dobra lokalizacja
         public int LocationRating { get; set; } // Ocena lokalizacji
-        public double Size { get; set; } //Metraż
+        public double FlatSize { get; set; } //Metraż mieszkania
+        public double RoomSize { get; set; } // Metraż pokoju
         public decimal Price { get; set; } //Cena
         public int Standard { get; set; } //Standard mieszkania
         public int Floor { get; set; } //Piętro
+        public string City { get; set; } // Miejscowość
+        public int UserRoomsAmount { get; set; } //Liczba pokoi które chce użytkownika
+        public decimal UserPrice { get; set; } //Cena która interesuje użytkownika
+        public int UserStandard { get; set; } //Standard mieszkania który chce użytkownik
+        public int UserLocationRating { get; set; } // Ocena lokalizacji, którą chce użytkownik
         public bool IsGoodOfert { get; set; } //Czy oferta jest dobra (by Python)
-
     }
 }
