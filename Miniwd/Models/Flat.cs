@@ -10,8 +10,8 @@ namespace Miniwd.Models
     {
         [Required(ErrorMessage = "Prosze podać typ oferty")]
         public string KindOfOperation { get; set; } //Czy kupno czy wynajem
-        [Required(ErrorMessage = "Proszę podać typ nieruchomości")]
         //public string UserKindOfOperation { get; set; } //Czy kupno czy wynajem - decyzja użytkownika
+        [Required(ErrorMessage = "Proszę podać typ nieruchomości")]
         public string KindOfSpace { get; set; } //Czy pokój czy mieszkanie
         //public string UserKindOfSpace { get; set; } //Czy pokój czy mieszkanie - decyzja użytkownika
         [Required(ErrorMessage = "Proszę podac liczbę pokoi")]
