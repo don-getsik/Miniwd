@@ -10,12 +10,12 @@ namespace Miniwd.Models
     {
         [Required(ErrorMessage = "Prosze podać typ oferty")]
         public string KindOfOperation { get; set; } //Czy kupno czy wynajem
-        //public string UserKindOfOperation { get; set; } //Czy kupno czy wynajem - decyzja użytkownika
         [Required(ErrorMessage = "Proszę podać typ nieruchomości")]
+        //public string UserKindOfOperation { get; set; } //Czy kupno czy wynajem - decyzja użytkownika
         public string KindOfSpace { get; set; } //Czy pokój czy mieszkanie
-        //public string UserKindOfSpace { get; set; } //Czy pokój czy mieszkanie - decyzja użytkownika
         [Required(ErrorMessage = "Proszę podac liczbę pokoi")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podac liczbe pokoi większą niż 1")]
+        //public string UserKindOfSpace { get; set; } //Czy pokój czy mieszkanie - decyzja użytkownika
         public int RoomsAmount { get; set; } //Liczba pokoi
         [Required(ErrorMessage = "Prosze podać liczbę łazienek")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać liczbę łazienek większą niż 1")]
@@ -23,7 +23,6 @@ namespace Miniwd.Models
         //public string IsGoodLocation { get; set; } //Dobra lokalizacja
         [Required(ErrorMessage ="Prosze podać ocenę lokalizacji")]
         public int LocationRating { get; set; } // Ocena lokalizacji
-        //public double RoomSize { get; set; } // Metraż pokoju
         [Required(ErrorMessage ="Proszę podać metraż")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać metraż większy niż 1")]
         public double Size { get; set; } //Metraż
