@@ -14,7 +14,8 @@ namespace Miniwd.Models
         public int BathroomsAmount { get; set; } //Liczba łazienek
         //public string IsGoodLocation { get; set; } //Dobra lokalizacja
         public int LocationRating { get; set; } // Ocena lokalizacji
-        public double Size { get; set; } //Metraż
+        public double FlatSize { get; set; } //Metraż mieszkania
+        public double RoomSize { get; set; } // Metraż pokoju
         public decimal Price { get; set; } //Cena
         public int Standard { get; set; } //Standard mieszkania
         public int Floor { get; set; } //Piętro
