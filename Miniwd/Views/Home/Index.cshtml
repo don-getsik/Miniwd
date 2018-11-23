@@ -9,70 +9,89 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/form-styles.css" rel="stylesheet" />
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <div>
-            Rodzaj oferty:
+    <div class="panel panel-success">
+        <div class="panel panel-heading text-center"><h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4></div>
+        <div class="panel-body">
+            <form>
+                <div class="form-row">
+                    <legend class="col-form-label col-3 pt-0">Rodzaj oferty</legend>
+                    <div class="col-9">
+                        <div class="form-check">
+                            @Html.RadioButtonFor(x => x.KindOfOperation, new { @class = "form-control" }) Kupno
+                        </div>
+                        <div class="form-check">
+                            @Html.RadioButtonFor(x => x.KindOfOperation, new { @class = "form-control" }) Wynajem
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <legend class="col-form-label col-3">Rodzaj mieszkania</legend>
+                    <div class="col-9">
+                        <div class="form-check" placeholder="test">
+                            @Html.RadioButtonFor(x => x.KindOfSpace, new { @class = "form-control" }) Mieszkanie
+                        </div>
+                        <div class="form-check">
+                            @Html.RadioButtonFor(x => x.KindOfSpace, new { @class = "form-control" }) Pokój
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label>Liczba pokoi</label>
+                    @Html.TextBoxFor(x => x.RoomsAmount, new { @class = "form-control" })
+                </div>
+                <div class="form-group col-5">
+                    <label>Liczba łazienek</label>
+                    @Html.TextBoxFor(x => x.BathroomsAmount, new { @class = "form-control" })
+                </div>
+                <div class="form-group col-5">
+                    <label>Ocena lokalizacji</label>
+                    @Html.DropDownListFor(x => x.LocationRating, new[] {
+                    new SelectListItem() {Text = "Bardzo ważna (5)", Value = "5"},
+                    new SelectListItem() {Text = "Ważna (4)", Value = "4"},
+                    new SelectListItem() {Text = "Obojętna (3)", Value = "3"},
+                    new SelectListItem() {Text = "Mało ważna (2)", Value = "2"},
+                    new SelectListItem() {Text = "Nieistotna (1)", Value = "1"}
+                   }, "Wybierz ocenę lokalizacji", new { @class = "form-control" })
+                </div>
+            </form>
         </div>
+
         <div>
-            @Html.RadioButtonFor(x => x.KindOfOperation, "Kupno") Kupno
-            <br />
-            @Html.RadioButtonFor(x => x.KindOfOperation, "Wynajem") Wynajem
+            <div>
+                Ocena lokalizacji:
+            </div>
+            <div>
+                @Html.RadioButtonFor(x => x.LocationRating, "Tak") Tak
+                <br />
+                @Html.RadioButtonFor(x => x.LocationRating, "Nie") Nie
+            </div>
         </div>
-    </div>
 
-    <div>
         <div>
-            Rodzaj mieszkania:
+            Metraż:
+            @Html.TextBoxFor(x => x.Size)
         </div>
+
         <div>
-            @Html.RadioButtonFor(x => x.KindOfSpace, "Mieszkanie") Mieszkanie
-            <br />
-            @Html.RadioButtonFor(x => x.KindOfSpace, "Pokój") Pokój
+            Cena:
+            @Html.TextBoxFor(x => x.Price)
         </div>
-    </div>
 
-    <div>
-        Ilość pokojów:
-        @Html.TextBoxFor(x => x.RoomsAmount)
-    </div>
-
-    <div>
-        Ilość łazienek:
-        @Html.TextBoxFor(x => x.BathroomsAmount)
-    </div>
-
-    <div>
         <div>
-            Ocena lokalizacji:
+            Jakość mieszkania:
+            @Html.TextBoxFor(x => x.Standard)
         </div>
+
         <div>
-            @Html.RadioButtonFor(x => x.IsGoodLocation, "Tak") Tak
-            <br />
-            @Html.RadioButtonFor(x => x.IsGoodLocation, "Nie") Nie
+            Piętro:
+            @Html.TextBoxFor(x => x.Floor)
         </div>
-    </div>
-
-    <div>
-        Metraż:
-        @Html.TextBoxFor(x => x.Size)
-    </div>
-
-    <div>
-        Cena:
-        @Html.TextBoxFor(x => x.Price)
-    </div>
-
-    <div>
-        Jakość mieszkania:
-        @Html.TextBoxFor(x => x.Standard)
-    </div>
-
-    <div>
-        Piętro:
-        @Html.TextBoxFor(x => x.Floor)
     </div>
 </body>
 </html>
