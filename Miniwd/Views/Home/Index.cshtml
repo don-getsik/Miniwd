@@ -18,7 +18,13 @@
   @using (Html.BeginForm())
   {
     <div class="panel panel-success">
-        <div class="panel panel-heading text-center"><h4>Sprawdź czy oferta mieszkania/pokoju się opłaca wypełniając poniższe pola formularza</h4></div>
+        <div class="panel panel-heading text-center">
+            <h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4>
+        </div>
+        @if (Html.ViewBag.isCheck)
+        {
+        @Html.ValidationSummary(false, "Błędy do poprawienia: ", new { @class = "alert alert-danger" })
+        }
         <div class="panel-body">
             <div class="row">
                 <div class="col-6 form-div">
