@@ -116,6 +116,9 @@
     <Content Include="Views\web.config" />
     <Content Include=".gitignore" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Miniwd - Web Deploy.pubxml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +130,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Home\" />
+=========
+>>>>>>>>> Temporary merge branch 2
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

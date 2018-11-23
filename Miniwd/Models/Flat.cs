@@ -5,7 +5,6 @@ using System.Web;
 
 namespace Miniwd.Models
 {
-    //Model formatki
     public class Flat
     {
         public string KindOfOperation { get; set; } //Czy kupno czy wynajem
@@ -18,5 +17,8 @@ namespace Miniwd.Models
         public decimal Price { get; set; } //Cena
         public int Standard { get; set; } //Standard mieszkania
         public int Floor { get; set; } //Piętro
+>>>>>>>>> Temporary merge branch 2
+
+
     }
 }
