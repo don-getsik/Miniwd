@@ -17,25 +17,28 @@
 <body>
     @using (Html.BeginForm())
     {
-    <div class="panel panel-success">
-        <div class="panel panel-heading text-center">
-            <h4>Wyniki działania</h4>
-        </div>
-        <div class="panel-body">
-            <form>
+        <div class="panel panel-success">
+            <div class="panel panel-heading text-center">
+                <h4>Wyniki działania</h4>
+            </div>
+            <div class="panel-body">
                 <div>
-                    Rodzaj oferty: 
-                        @if (Model.KindOfOperation.Equals("K"))
-                        {<label> Kupno</label>}
-                        else
-                        {<label> Wynajem</label>}
+                    Rodzaj oferty:
+                    @if (Model.KindOfOperation.Equals("K"))
+                    {
+                        <label> Kupno</label>}
+                    else
+                    {
+                        <label> Wynajem</label>}
                 </div>
                 <div>
-                    Rodzaj mieszkania: 
-                        @if (Model.KindOfSpace.Equals("M"))
-                        {<label>Mieszkanie</label>}
-                        else
-                        { <label>Pokój</label>}
+                    Rodzaj mieszkania:
+                    @if (Model.KindOfSpace.Equals("M"))
+                    {
+                        <label>Mieszkanie</label>}
+                    else
+                    {
+                        <label>Pokój</label>}
                 </div>
                 <div>
                     Liczba pokoi: @Model.RoomsAmount
@@ -73,29 +76,128 @@
 
                     }
                 </div>
-            </form>
-        </div>
 
-        <div>
-            Metraż: @Model.KindOfOperation
-        </div>
+                <div>
+                    Metraż: @Model.KindOfOperation
+                </div>
 
-        <div>
-            Cena: @Model.Price
-        </div>
+                <div>
+                    Cena: @Model.Price
+                </div>
 
-        <div>
-            Jakość mieszkania: @Model.Standard
-        </div>
+                <div>
+                    Jakośc mieszkania:
+                    @switch (Model.Standard)
+                    {
+                        case 5:
+                            <p>Bardzo wysoka (5)</p>
+                            break;
 
-        <div>
-            Piętro: @Model.Floor
+                        case 4:
+                            <p>Wysoka (4)</p>
+                            break;
+
+                        case 3:
+                            <p>Średnia (3)</p>
+                            break;
+
+                        case 2:
+                            <p>Niska (2)</p>
+                            break;
+
+                        case 1:
+                            <p>Bardzo niska (1)</p>
+                            break;
+
+                        default:
+                            <label>Średnia (3)</label>
+                            break;
+
+                    }
+                </div>
+
+                <div>
+                    Piętro: @Model.Floor
+                </div>
+                <div>
+                    Miejscowość: @Model.City
+                </div>
+                <div>
+                    Preferowana liczba pokoi: @Model.UserRoomsAmount
+                </div>
+                <div>
+                    Prefoerowana ocena lokalizacji:
+                    @switch (Model.UserLocationRating)
+                    {
+                        case 5:
+                            <p>Bardzo ważna (5)</p>
+                            break;
+
+                        case 4:
+                            <p>Ważna (4)</p>
+                            break;
+
+                        case 3:
+                            <p>Obojętna (3)</p>
+                            break;
+
+                        case 2:
+                            <p>Mało ważna (2)</p>
+                            break;
+
+                        case 1:
+                            <p>Nieistotna (1)</p>
+                            break;
+
+                        default:
+                            <label>Obojętna (3)</label>
+                            break;
+
+                    }
+                </div>
+                <div>
+                    Preferowana cena: @Model.UserPrice
+                </div>
+                <div>
+                    Jakośc mieszkania:
+                    @switch (Model.UserStandard)
+                    {
+                        case 5:
+                            <p>Bardzo wysoka (5)</p>
+                            break;
+
+                        case 4:
+                            <p>Wysoka (4)</p>
+                            break;
+
+                        case 3:
+                            <p>Średnia (3)</p>
+                            break;
+
+                        case 2:
+                            <p>Niska (2)</p>
+                            break;
+
+                        case 1:
+                            <p>Bardzo niska (1)</p>
+                            break;
+
+                        default:
+                            <label>Średnia (3)</label>
+                            break;
+
+                    }
+                </div>
+                <div class="text-center">
+                    @if (Model.IsGoodOfert.CompareTo(75) > 0)
+                    {
+                        <label> To mieszkanie jest dobre :)</label> }
+                    else
+                    {
+                        <label>To nie jest dobra oferta :(</label>}
+                </div>
+            </div>
         </div>
-        <div class="text-center">
-            @if (Model.IsGoodOfert.Equals(true)) { <label> To mieszkanie jest dobre :)</label> }
-            else {  <label>To nie jest dobra oferta :(</label>}
-        </div>
-    </div>
     }
 </body>
 </html>
