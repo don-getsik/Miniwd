@@ -13,14 +13,18 @@ namespace Miniwd.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            return View("Index");
+            return View();
         }
 
         [HttpPost]
         public ViewResult Index (Flat flat)
         {
-            // TODO: Dodanie obsługi zgłoszenia
-            return View ("Result", flat);
+            if (ModelState.IsValid)
+            {
+                // TODO: Dodanie obsługi zgłoszenia
+                return View("Result", flat);
+            }
+            else return View();
         }
     }
 }
