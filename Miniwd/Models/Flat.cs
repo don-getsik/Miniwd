@@ -30,21 +30,21 @@ namespace Miniwd.Models
 
         //public string IsGoodLocation { get; set; } //Dobra lokalizacja
 
-        [Required(ErrorMessage ="Prosze podać ocenę lokalizacji mieszkania/pokoju z oferty")]
+        [Required(ErrorMessage ="Prosze wybrać ocenę lokalizacji mieszkania/pokoju z oferty")]
         public int LocationRating { get; set; } // Ocena lokalizacji
 
         [Required(ErrorMessage ="Proszę podać metraż")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podać metraż większy niż 1")]
-        [RegularExpression("^[0-9]*,?[0-9]*$", ErrorMessage = "Nieprawidłowy metraż z oferty")]
+        [RegularExpression("(^[0-9]*$)|(^[0-9]*,[0-9]{1,2}$)", ErrorMessage = "Nieprawidłowy metraż z oferty")]
         public double Size { get; set; } //Metraż
 
         [Required(ErrorMessage = "Prosze podać cenę z oferty")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podac preferowaną cenę większą niż 1zł")]
-        [RegularExpression("^[0-9]*,?[0-9]*$", ErrorMessage = "Nieprawidłowa cena z oferty")]
+        [RegularExpression("(^[0-9]*$)|(^[0-9]*,[0-9]{1,2}$)", ErrorMessage = "Nieprawidłowa cena z oferty")]
         [DataType(DataType.Currency)]
         public decimal Price { get; set; } //Cena
 
-        [Required(ErrorMessage = "Proszę podać standard pokoju/mieszkania z oferty")]
+        [Required(ErrorMessage = "Proszę wybrać standard pokoju/mieszkania z oferty")]
         public int Standard { get; set; } //Standard mieszkania
 
         [Required(ErrorMessage = "Prosze podać piętro")]
@@ -52,9 +52,7 @@ namespace Miniwd.Models
         [RegularExpression("^[0-9]*$", ErrorMessage = "Nieprawidłowe piętro")]
         public int Floor { get; set; } //Piętro
 
-        [Required(ErrorMessage = "Proszę podać miejscowość")]
-        [StringLength(30, MinimumLength = 3, ErrorMessage = "Nieprawidłowa długość nazwy miejscowości")]
-        [RegularExpression("^[A-Z][^0-9]*$", ErrorMessage ="Nieprawidłowa nazwa mista (z dużej litery)")]
+        [Required(ErrorMessage = "Proszę wybrać miejscowość")]
         public string City { get; set; } // Miejscowość
 
         [Required(ErrorMessage = "Proszę podać preferowaną liczbę pokoi")]
@@ -64,7 +62,7 @@ namespace Miniwd.Models
 
         [Required(ErrorMessage = "Prosze podać preferowaną cenę")]
         [Range(1, int.MaxValue, ErrorMessage = "Proszę podac preferowaną cenę większą niż 1zł")]
-        [RegularExpression("^[0-9]*,?[0-9]*$", ErrorMessage = "Nieprawidłowa preferowana cena")]
+        [RegularExpression("(^[0-9]*$)|(^[0-9]*,[0-9]{1,2}$)", ErrorMessage = "Nieprawidłowa preferowana cena")]
         [DataType(DataType.Currency)]
         public decimal UserPrice { get; set; } //Cena która interesuje użytkownika
 
@@ -74,6 +72,6 @@ namespace Miniwd.Models
         [Required(ErrorMessage = "Prosze podać preferowaną ocenę lokalizacji mieszkania/pokoju")]
         public int UserLocationRating { get; set; } // Ocena lokalizacji, którą chce użytkownik
 
-        public int IsGoodOfert { get; set; } //Czy oferta jest dobra (by Python)
+        public bool IsGoodOfert { get; set; } //Czy oferta jest dobra (by Python)
     }
 }
