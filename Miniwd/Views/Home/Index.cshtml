@@ -18,14 +18,19 @@
   @using (Html.BeginForm())
   {
     <div class="panel panel-success">
-        <div class="panel panel-heading text-center"><h4>Sprawdź czy oferta mieszkania/pokoju się opłaca wypełniając poniższe pola formularza</h4></div>
+        <div class="panel panel-heading text-center">
+            <h4>Sprawdź czy mieszkanie się opłaca wypełniając poniższe pola formularza</h4>
+        </div>
+        @if (Html.ViewBag.isCheck)
+        {
+        @Html.ValidationSummary(false, "Błędy do poprawienia: ", new { @class = "alert alert-danger" })
+        }
         <div class="panel-body">
             <div class="row">
                 <div class="col-6 form-div">
                     <div class="panel panel-info">
                         <div class="panel panel-heading text-center">Wprowadź dane oferty, którą otrzymałeś</div>
                     </div>
-                    <form class="form-style">
                         <div class="form-row">
                             <legend class="col-form-label col-6 pt-0">Rodzaj oferty</legend>
                             <div class="col-6">
@@ -38,7 +43,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <legend class="col-form-label col-6">Rodzaj mieszkania</legend>
+                            <legend class="col-form-label col-6">Rodzaj przestrzeni</legend>
                             <div class="col-6">
                                 <div class="form-check" placeholder="test">
                                     @Html.RadioButtonFor(x => x.KindOfSpace, "M") Mieszkanie
@@ -92,13 +97,11 @@
                             <label>Miejscowość</label>
                             @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
                         </div>
-                    </form>
                 </div>
                 <div class="col-6 form-div">
                     <div class="panel panel-warning">
                         <div class="panel panel-heading text-center">Wprowadź swoje preferencje</div>
                     </div>
-                    <form class="form-style">
                         <div class="form-group col-12">
                             <label>Liczba pokoi</label>
                             @Html.TextBoxFor(x => x.UserRoomsAmount, new { @class = "form-control" })
@@ -127,7 +130,6 @@
                             new SelectListItem() {Text = "Bardzo niski (1)", Value = "1"}
                            }, "Wybierz ocenę standardu", new { @class = "form-control" })
                         </div>
-                    </form>
                 </div>
             </div>
             
