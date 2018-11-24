@@ -91,6 +91,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Artificial_Intelligence\predict.py" />
+    <Content Include="Artificial_Intelligence\Train\trainModel.py" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -122,6 +124,9 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Artificial_Intelligence\encoder.le" />
+    <Content Include="Artificial_Intelligence\saved.model" />
+    <Content Include="Artificial_Intelligence\Train\dane.csv" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -154,6 +159,7 @@
     </Compile>
     <Compile Include="Models\Flat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AIService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
