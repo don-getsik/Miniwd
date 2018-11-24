@@ -1,9 +1,6 @@
-import numpy as np
 import pandas as pd
 import pickle
-import sys
 import sklearn
-import os
 
 #Get a dictionary from execution arguments
 j = int((len(sys.argv)-1)/2)
