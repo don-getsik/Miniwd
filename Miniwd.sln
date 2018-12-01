@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miniwd", "Miniwd\Miniwd.csproj", "{7ED88CA7-57A8-48B0-B8D3-2F334232E683}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniwdTests", "MiniwdTests\MiniwdTests.csproj", "{71403D6C-71BB-45AA-AA91-D585CF1C0442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniwdTests", "MiniwdTests\MiniwdTests.csproj", "{71403D6C-71BB-45AA-AA91-D585CF1C0442}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -49,6 +49,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -107,6 +108,8 @@
     <Content Include="Content\form-styles.css" />
     <Content Include="Content\styles.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Loader.gif" />
+    <Content Include="Loading.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -129,7 +132,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Artificial_Intelligence\encoder.le" />
     <Content Include="Artificial_Intelligence\saved.model" />
-    <Content Include="Artificial_Intelligence\Train\dane.csv" />
+    <None Include="Properties\PublishProfiles\Miniwd-WAT - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -159,6 +162,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.aspx.cs">
+      <DependentUpon>Loading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.aspx.designer.cs">
+      <DependentUpon>Loading.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Flat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
