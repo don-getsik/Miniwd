@@ -106,7 +106,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\form-styles.css" />
-    <Content Include="Content\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\Loader.gif" />
     <Content Include="Loading.aspx" />
@@ -132,7 +131,6 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Artificial_Intelligence\encoder.le" />
     <Content Include="Artificial_Intelligence\saved.model" />
-    <None Include="Properties\PublishProfiles\Miniwd-WAT - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
