@@ -24,7 +24,7 @@ namespace Miniwd.Services
         private Boolean ExecutePythonScript(string args)
         {
             string result;
-            using (var client = new SshClient("23.100.81.14", "miniwd", "Miniwdna100%"))
+            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
             {
                 client.Connect();
                 result = client.RunCommand(@"/anaconda/envs/py35/bin/python Artificial_Intelligence/predict.py "+ args).Result;
