@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using Miniwd.Models;
+using Renci.SshNet;
 
 namespace Miniwd.Services
 {
@@ -21,22 +23,14 @@ namespace Miniwd.Services
 
         private Boolean ExecutePythonScript(string args)
         {
-            string pythonScript = @".\Artificial_Intelligence\predict.py";
-            string pythonCommand = "Python";
             string result;
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = pythonCommand;
-            start.Arguments = pythonScript + " " + args;
-            start.UseShellExecute = false;
-            start.RedirectStandardOutput = true;
-            using (Process process = Process.Start(start))
+            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
             {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    result = reader.ReadToEnd();
-                }
+                client.Connect();
+                result = client.RunCommand(@"/anaconda/envs/py35/bin/python Artificial_Intelligence/predict.py "+ args).Result;
+                client.Disconnect();
             }
-            return result.Replace(Environment.NewLine, "").Equals("1") ? true : false;
+            return result.Equals("1\n");
         }
 
         private string GetArgsInString(Flat flat)
@@ -68,7 +62,7 @@ namespace Miniwd.Services
 
             sb.Append(" UserStandard "); sb.Append(flat.UserStandard);
 
-            sb.Append(" UserLocationRating "); sb.Append(flat.UserLocationRating);
+            sb.Append(" UserLocationRating "); sb.Append(flat.UserLocationRating -1);
 
             return sb.ToString();
         }

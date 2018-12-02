@@ -1,4 +1,5 @@
 ﻿using Miniwd.Models;
+using Miniwd.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace Miniwd.Controllers
         {
             if (ModelState.IsValid)
             {
-                // TODO: Dodanie obsługi zgłoszenia
+                var aiservice = new AIService(flat);
+                flat.IsGoodOfert = aiservice.BuyOrNot();
                 return View("Result", flat);
             }
             else
