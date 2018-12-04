@@ -4,13 +4,12 @@ import sklearn
 import sys
 import os
 
-print(os.getcwd())
 #Get a dictionary from execution arguments
 j = int((len(sys.argv)-1)/2)
 dictionary = {}
 for i in range (0,j):
 	dictionary[sys.argv[i*2+1]] = sys.argv[i*2+2]
-print("bla")
+
 #Replace City string with encoded value
 le = pickle.load(open("Artificial_Intelligence\encoder.le",'rb'))
 dictionary["City"] = le.transform([dictionary["City"]])[0]
