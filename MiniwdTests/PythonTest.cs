@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Renci.SshNet;
 
 namespace MiniwdTests
 {
@@ -21,7 +23,7 @@ namespace MiniwdTests
         }
 
         [TestMethod]
-        public void PythonTest()
+        public void PythonSSHTest()
         {
             string result;
             using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
@@ -34,7 +36,7 @@ namespace MiniwdTests
         }
 
         [TestMethod]
-        public void PythonTest()
+        public void PythonModuleTest()
         {
             string sklearn;
             string pandas;
