@@ -2,11 +2,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Miniwd.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using Renci.SshNet;
+using System;
+using Miniwd.Services;
 
 namespace MiniwdTests
 {
     [TestClass]
-    public class FlatTests
+    public class MiniwdTests
     {
         public static IList<ValidationResult> Validate(object model)
         {
@@ -25,7 +28,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -50,7 +52,6 @@ namespace MiniwdTests
             {
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -76,7 +77,6 @@ namespace MiniwdTests
             {
                 KindOfOperation = "K",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -102,7 +102,6 @@ namespace MiniwdTests
             {
                 KindOfOperation = "K",
                 KindOfSpace = "M",
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -129,7 +128,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 0,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -149,59 +147,6 @@ namespace MiniwdTests
         }
 
         [TestMethod]
-        public void BathroomsAmountTest1()
-        {
-            var model = new Flat()
-            {
-                KindOfOperation = "K",
-                KindOfSpace = "M",
-                RoomsAmount = 4,
-                LocationRating = 5,
-                Size = 120,
-                Price = 230,
-                Standard = 4,
-                Floor = 2,
-                City = "Warszawa",
-                UserRoomsAmount = 2,
-                UserPrice = 123,
-                UserStandard = 3,
-                UserLocationRating = 4
-            };
-
-            var results = Validate(model);
-
-            Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ liczbê ³azienek wiêksz¹ ni¿ 1", results[0].ErrorMessage);
-        }
-
-        [TestMethod]
-        public void BathroomsAmountTest2()
-        {
-            var model = new Flat()
-            {
-                KindOfOperation = "K",
-                KindOfSpace = "M",
-                RoomsAmount = 4,
-                BathroomsAmount = 0,
-                LocationRating = 5,
-                Size = 120,
-                Price = 230,
-                Standard = 4,
-                Floor = 2,
-                City = "Warszawa",
-                UserRoomsAmount = 2,
-                UserPrice = 123,
-                UserStandard = 3,
-                UserLocationRating = 4
-            };
-
-            var results = Validate(model);
-
-            Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ liczbê ³azienek wiêksz¹ ni¿ 1", results[0].ErrorMessage);
-        }
-
-        [TestMethod]
         public void LocationRatingTest1()
         {
             var model = new Flat()
@@ -209,7 +154,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 Size = 120,
                 Price = 230,
                 Standard = 4,
@@ -235,7 +179,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 0,
                 Size = 120,
                 Price = 230,
@@ -262,7 +205,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Price = 230,
                 Standard = 4,
@@ -288,7 +230,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 0,
                 Price = 230,
@@ -315,7 +256,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Standard = 4,
@@ -341,7 +281,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 0,
@@ -368,7 +307,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -394,7 +332,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -421,7 +358,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -446,7 +382,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -473,7 +408,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -499,7 +433,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 2,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -525,7 +458,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 2,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -552,7 +484,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 23,
@@ -578,7 +509,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 23,
@@ -605,7 +535,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -631,7 +560,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 5,
                 Size = 120,
                 Price = 230,
@@ -658,7 +586,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 3,
                 Size = 120,
                 Price = 230,
@@ -684,7 +611,6 @@ namespace MiniwdTests
                 KindOfOperation = "K",
                 KindOfSpace = "M",
                 RoomsAmount = 4,
-                BathroomsAmount = 1,
                 LocationRating = 4,
                 Size = 120,
                 Price = 230,
@@ -710,7 +636,83 @@ namespace MiniwdTests
 
             var results = Validate(model);
 
-            Assert.AreEqual(13, results.Count);
+            Assert.AreEqual(12, results.Count);
+        }
+
+        [TestMethod]
+        public void SSHConnectionTest()
+        {
+            string result;
+            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
+            {
+                client.Connect();
+                result = client.RunCommand("echo 123").Result;
+                client.Disconnect();
+            }
+            Assert.AreEqual("123\n", result);
+        }
+
+        [TestMethod]
+        public void PythonSSHTest()
+        {
+            string result;
+            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
+            {
+                client.Connect();
+                result = client.RunCommand("python -c 'print(123)'").Result;
+                client.Disconnect();
+            }
+            Assert.AreEqual("123\n", result);
+        }
+
+        [TestMethod]
+        public void AiServiceTestSuggestPositiveFlat()
+        {
+            var flat = new Flat()
+            {
+                KindOfOperation = "K",
+                KindOfSpace = "M",
+                RoomsAmount = 4,
+                LocationRating = 5,
+                Size = 88,
+                Price = 473088,
+                Standard = 5,
+                Floor = 3,
+                City = "Poznañ",
+                UserRoomsAmount = 2,
+                UserPrice = 532224,
+                UserStandard = 1,
+                UserLocationRating = 0
+            };
+            var aiservice = new AIService(flat);
+            Boolean result = aiservice.BuyOrNot();
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void AiServiceTestSuggestNegativeFlat()
+        {
+            var flat = new Flat()
+            {
+                KindOfOperation = "W",
+                KindOfSpace = "M",
+                RoomsAmount = 5,
+                LocationRating = 4,
+                Size = 100,
+                Price = 13440,
+                Standard = 1,
+                Floor = 8,
+                City = "Bydgoszcz",
+                UserRoomsAmount = 4,
+                UserPrice = 6720,
+                UserStandard = 2,
+                UserLocationRating = 3
+            };
+            var aiservice = new AIService(flat);
+            Boolean result = aiservice.BuyOrNot();
+
+            Assert.AreEqual(false, result);
         }
     }
 }

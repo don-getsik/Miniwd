@@ -23,10 +23,10 @@ namespace Miniwd.Models
         [RegularExpression("^[0-9]*$",ErrorMessage ="Nieprawidłowa liczba pokoi z oferty")]
         public int RoomsAmount { get; set; } //Liczba pokoi
 
-        [Required(ErrorMessage = "Prosze podać liczbę łazienek")]
-        [Range(1, int.MaxValue, ErrorMessage = "Proszę podać liczbę łazienek większą niż 1")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Nieprawidłowa liczba łazienek")]
-        public int BathroomsAmount { get; set; } //Liczba łazienek
+        //[Required(ErrorMessage = "Prosze podać liczbę łazienek")]
+        //[Range(1, int.MaxValue, ErrorMessage = "Proszę podać liczbę łazienek większą niż 1")]
+        //[RegularExpression("^[0-9]*$", ErrorMessage = "Nieprawidłowa liczba łazienek")]
+        //public int BathroomsAmount { get; set; } //Liczba łazienek
 
         //public string IsGoodLocation { get; set; } //Dobra lokalizacja
 

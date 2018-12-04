@@ -58,17 +58,13 @@
                             @Html.TextBoxFor(x => x.RoomsAmount, new { @class = "form-control" })
                         </div>
                         <div class="form-group col-12">
-                            <label>Liczba łazienek</label>
-                            @Html.TextBoxFor(x => x.BathroomsAmount, new { @class = "form-control" })
-                        </div>
-                        <div class="form-group col-12">
                             <label>Ocena lokalizacji</label>
                             @Html.DropDownListFor(x => x.LocationRating, new[] {
-                            new SelectListItem() {Text = "Bardzo ważna (5)", Value = "5"},
-                            new SelectListItem() {Text = "Ważna (4)", Value = "4"},
-                            new SelectListItem() {Text = "Obojętna (3)", Value = "3"},
-                            new SelectListItem() {Text = "Mało ważna (2)", Value = "2"},
-                            new SelectListItem() {Text = "Nieistotna (1)", Value = "1"}
+                            new SelectListItem() {Text = "Bardzo dobra (5)", Value = "5"},
+                            new SelectListItem() {Text = "Dobra (4)", Value = "4"},
+                            new SelectListItem() {Text = "Średnia (3)", Value = "3"},
+                            new SelectListItem() {Text = "Słaba (2)", Value = "2"},
+                            new SelectListItem() {Text = "Bardzo słaba (1)", Value = "1"}
                            }, "Wybierz ocenę lokalizacji", new { @class = "form-control" })
                         </div>
                         <div class="form-group col-12">
@@ -118,7 +114,7 @@
                             @Html.TextBoxFor(x => x.UserRoomsAmount, new { @class = "form-control" })
                         </div>
                         <div class="form-group col-12">
-                            <label>Ocena lokalizacji</label>
+                            <label>Istotność lokalizacji</label>
                             @Html.DropDownListFor(x => x.UserLocationRating, new[] {
                             new SelectListItem() {Text = "Bardzo ważna (5)", Value = "5"},
                             new SelectListItem() {Text = "Ważna (4)", Value = "4"},
