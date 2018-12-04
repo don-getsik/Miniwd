@@ -51,28 +51,24 @@
                             <span class="col-form-label">@Model.RoomsAmount</span>
                         </div>
                         <div class="form-group row">
-                            <label class="col-6 col-form-label text-right">Liczba łazienek:</label>
-                            <span class="col-form-label">@Model.BathroomsAmount</span>
-                        </div>
-                        <div class="form-group row">
                             <label class="col-6 col-form-label text-right">Ocena lokalizacji:</label>
                             <span class="col-form-label">
                                 @switch (Model.LocationRating)
                                 {
                                     case 5:
-                                        <span>Bardzo ważna (5)</span>
+                                        <span>Bardzo dobra (5)</span>
                                         break;
                                     case 4:
-                                        <span>Ważna (4)</span>
+                                        <span>Dobra (4)</span>
                                         break;
                                     case 3:
-                                        <span>Obojętna (3)</span>
+                                        <span>Średnia (3)</span>
                                         break;
                                     case 2:
-                                        <span>Mało ważna (2)</span>
+                                        <span>Słaba (2)</span>
                                         break;
                                     case 1:
-                                        <span>Nieistotna (1)</span>
+                                        <span>Bardzo słaba (1)</span>
                                         break;
                                 }
                             </span>
@@ -127,7 +123,7 @@
                             <span class="col-form-label">@Model.UserRoomsAmount</span>
                         </div>
                         <div class="form-group row">
-                            <label class="col-6 col-form-label text-right">Preferowana ocena lokalizacji:</label>
+                            <label class="col-6 col-form-label text-right">Preferowana istotność lokalizacji:</label>
                             <span class="col-form-label">
                                 @switch (Model.UserLocationRating)
                                 {
