@@ -108,7 +108,6 @@
     <Content Include="Content\form-styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\Loader.gif" />
-    <Content Include="Loading.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -160,12 +159,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Loading.aspx.cs">
-      <DependentUpon>Loading.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Loading.aspx.designer.cs">
-      <DependentUpon>Loading.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Flat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
