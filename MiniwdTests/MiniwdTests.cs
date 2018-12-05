@@ -643,7 +643,7 @@ namespace MiniwdTests
         public void SSHConnectionTest()
         {
             string result;
-            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
+            using (var client = new SshClient("40.87.134.94", "miniwd", "Miniwdna100%"))
             {
                 client.Connect();
                 result = client.RunCommand("echo 123").Result;
@@ -656,7 +656,7 @@ namespace MiniwdTests
         public void PythonSSHTest()
         {
             string result;
-            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
+            using (var client = new SshClient("40.87.134.94", "miniwd", "Miniwdna100%"))
             {
                 client.Connect();
                 result = client.RunCommand("python -c 'print(123)'").Result;
