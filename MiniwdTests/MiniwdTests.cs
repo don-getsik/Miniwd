@@ -67,7 +67,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Prosze podaæ typ oferty", results[0].ErrorMessage);
+            Assert.AreEqual("Prosze podaÃ¦ typ oferty", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -92,7 +92,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ typ nieruchomoœci", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ typ nieruchomoÅ“ci", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -117,7 +117,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ liczbê pokoi z oferty wiêksz¹ ni¿ 1", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ liczbÃª pokoi z oferty wiÃªkszÂ¹ niÂ¿ 1", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -143,7 +143,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ liczbê pokoi z oferty wiêksz¹ ni¿ 1", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ liczbÃª pokoi z oferty wiÃªkszÂ¹ niÂ¿ 1", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Prosze wybraæ ocenê lokalizacji mieszkania/pokoju z oferty", results[0].ErrorMessage);
+            Assert.AreEqual("Prosze wybraÃ¦ ocenÃª lokalizacji mieszkania/pokoju z oferty", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -194,7 +194,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Prosze wybraæ ocenê lokalizacji mieszkania/pokoju z oferty", results[0].ErrorMessage);
+            Assert.AreEqual("Prosze wybraÃ¦ ocenÃª lokalizacji mieszkania/pokoju z oferty", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -219,7 +219,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ metra¿ wiêkszy ni¿ 1", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ metraÂ¿ wiÃªkszy niÂ¿ 1", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -245,7 +245,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ metra¿ wiêkszy ni¿ 1", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ metraÂ¿ wiÃªkszy niÂ¿ 1", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -270,7 +270,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ cenê z oferty wiêksz¹ ni¿ 1z³", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ cenÃª z oferty wiÃªkszÂ¹ niÂ¿ 1zÂ³", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -296,7 +296,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ cenê z oferty wiêksz¹ ni¿ 1z³", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ cenÃª z oferty wiÃªkszÂ¹ niÂ¿ 1zÂ³", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -321,7 +321,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê wybraæ standard pokoju/mieszkania z oferty", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª wybraÃ¦ standard pokoju/mieszkania z oferty", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -347,7 +347,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê wybraæ standard pokoju/mieszkania z oferty", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª wybraÃ¦ standard pokoju/mieszkania z oferty", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -397,7 +397,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ piêtro wiêksze lub równe 0", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ piÃªtro wiÃªksze lub rÃ³wne 0", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -422,7 +422,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê wybraæ miejscowoœæ", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª wybraÃ¦ miejscowoÅ“Ã¦", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -447,7 +447,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ preferowan¹ liczbê pokoi wiêksz¹ lub równ¹ 1", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ preferowanÂ¹ liczbÃª pokoi wiÃªkszÂ¹ lub rÃ³wnÂ¹ 1", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -473,7 +473,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ preferowan¹ liczbê pokoi wiêksz¹ lub równ¹ 1", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ preferowanÂ¹ liczbÃª pokoi wiÃªkszÂ¹ lub rÃ³wnÂ¹ 1", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -498,7 +498,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podac preferowan¹ cenê wiêksz¹ ni¿ 1z³", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podac preferowanÂ¹ cenÃª wiÃªkszÂ¹ niÂ¿ 1zÂ³", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -524,7 +524,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podac preferowan¹ cenê wiêksz¹ ni¿ 1z³", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podac preferowanÂ¹ cenÃª wiÃªkszÂ¹ niÂ¿ 1zÂ³", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -549,7 +549,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ preferowany standard pokoju/mieszkania", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ preferowany standard pokoju/mieszkania", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -575,7 +575,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Proszê podaæ preferowany standard pokoju/mieszkania", results[0].ErrorMessage);
+            Assert.AreEqual("ProszÃª podaÃ¦ preferowany standard pokoju/mieszkania", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -600,7 +600,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Prosze podaæ preferowan¹ ocenê lokalizacji mieszkania/pokoju", results[0].ErrorMessage);
+            Assert.AreEqual("Prosze podaÃ¦ preferowanÂ¹ ocenÃª lokalizacji mieszkania/pokoju", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -626,7 +626,7 @@ namespace MiniwdTests
             var results = Validate(model);
 
             Assert.AreEqual(1, results.Count);
-            Assert.AreEqual("Prosze podaæ preferowan¹ ocenê lokalizacji mieszkania/pokoju", results[0].ErrorMessage);
+            Assert.AreEqual("Prosze podaÃ¦ preferowanÂ¹ ocenÃª lokalizacji mieszkania/pokoju", results[0].ErrorMessage);
         }
 
         [TestMethod]
@@ -643,7 +643,7 @@ namespace MiniwdTests
         public void SSHConnectionTest()
         {
             string result;
-            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
+            using (var client = new SshClient("40.87.134.94", "miniwd", "Miniwdna100%"))
             {
                 client.Connect();
                 result = client.RunCommand("echo 123").Result;
@@ -656,7 +656,7 @@ namespace MiniwdTests
         public void PythonSSHTest()
         {
             string result;
-            using (var client = new SshClient("40.113.78.173", "miniwd", "Miniwdna100%"))
+            using (var client = new SshClient("40.87.134.94", "miniwd", "Miniwdna100%"))
             {
                 client.Connect();
                 result = client.RunCommand("python -c 'print(123)'").Result;
@@ -678,7 +678,7 @@ namespace MiniwdTests
                 Price = 473088,
                 Standard = 5,
                 Floor = 3,
-                City = "Poznañ",
+                City = "PoznaÃ±",
                 UserRoomsAmount = 2,
                 UserPrice = 532224,
                 UserStandard = 1,
